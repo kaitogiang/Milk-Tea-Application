@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="558.0" prefWidth="947.0" styleClass="background-login" stylesheets="@application.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LoginRegisterController">
+   <children>
+      <StackPane layoutX="572.0" layoutY="56.0" prefHeight="446.0" prefWidth="349.0" stylesheets="@application.css">
+         <children>
+            <AnchorPane fx:id="login_form" prefHeight="200.0" prefWidth="200.0" styleClass="form" stylesheets="@application.css">
+               <children>
+                  <AnchorPane layoutX="-1.0" layoutY="1.0" prefHeight="64.0" prefWidth="350.0" style="-fx-background-color: #FDFDFD; -fx-background-radius: 20px 20px 0 0;" styleClass="-fx-background-color: white" AnchorPane.bottomAnchor="381.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0">
+                     <children>
+                        <Label layoutX="120.0" layoutY="2.0" prefHeight="64.0" prefWidth="114.0" styleClass="login-title" stylesheets="@application.css" text="Login" />
+                     </children>
+                  </AnchorPane>
+                  <TextField fx:id="log_username" layoutX="53.0" layoutY="124.0" prefHeight="40.0" prefWidth="242.0" promptText="username" styleClass="textfild" stylesheets="@application.css">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="log_loginBtn" layoutX="53.0" layoutY="275.0" mnemonicParsing="false" onAction="#loginButton" prefHeight="51.0" prefWidth="242.0" styleClass="form-btn" stylesheets="@application.css" text="Login">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="log_showBtn" layoutX="299.0" layoutY="184.0" mnemonicParsing="false" onAction="#showHidePassword" prefHeight="26.0" prefWidth="28.0" styleClass="hide-show-btn" stylesheets="@application.css">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/visible.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Hyperlink layoutX="53.0" layoutY="236.0" onAction="#switchToForgotPass" prefHeight="26.0" prefWidth="126.0" styleClass="link" stylesheets="@application.css" text="Forget password?" textFill="#a9775d">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Hyperlink>
+                  <Hyperlink layoutX="110.0" layoutY="340.0" onAction="#switchToRegister" prefHeight="26.0" prefWidth="126.0" styleClass="link" stylesheets="@application.css" text="Create an Account" textFill="#a9775d">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Hyperlink>
+                  <PasswordField fx:id="log_password" layoutX="53.0" layoutY="185.0" prefHeight="38.0" prefWidth="242.0" promptText="password" styleClass="textfild" stylesheets="@application.css">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </PasswordField>
+                  <TextField layoutX="54.0" layoutY="185.0" prefHeight="38.0" prefWidth="242.0" promptText="password" styleClass="textfild" stylesheets="@application.css" visible="false">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="log_hideBtn" layoutX="299.0" layoutY="184.0" mnemonicParsing="false" onAction="#showHidePassword" prefHeight="26.0" prefWidth="28.0" styleClass="hide-show-btn" stylesheets="@application.css" visible="false">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/invisible.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <TextField fx:id="log_showPassword" layoutX="53.0" layoutY="185.0" prefHeight="38.0" prefWidth="242.0" styleClass="textfild" stylesheets="@application.css" visible="false">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="register_form" prefHeight="200.0" prefWidth="200.0" styleClass="form" stylesheets="@application.css" visible="false">
+               <children>
+                  <AnchorPane layoutX="-1.0" layoutY="1.0" prefHeight="64.0" prefWidth="350.0" style="-fx-background-color: #FDFDFD; -fx-background-radius: 20px 20px 0 0;" styleClass="-fx-background-color: white" AnchorPane.bottomAnchor="381.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0">
+                     <children>
+                        <Label alignment="CENTER" layoutX="-1.0" layoutY="1.0" prefHeight="64.0" prefWidth="350.0" styleClass="login-title" stylesheets="@application.css" text="Register" />
+                     </children>
+                  </AnchorPane>
+                  <TextField fx:id="reg_username" layoutX="52.0" layoutY="84.0" prefHeight="40.0" prefWidth="242.0" promptText="Enter your username" styleClass="textfild" stylesheets="@application.css">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="signUpBtn" layoutX="54.0" layoutY="340.0" mnemonicParsing="false" onAction="#registerButton" prefHeight="51.0" prefWidth="242.0" styleClass="form-btn" stylesheets="@application.css" text="Sign up">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="299.0" layoutY="184.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="28.0" styleClass="hide-show-btn" stylesheets="@application.css" />
+                  <PasswordField fx:id="reg_password" layoutX="52.0" layoutY="135.0" prefHeight="38.0" prefWidth="242.0" promptText="Enter your password" styleClass="textfild" stylesheets="@application.css">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </PasswordField>
+                  <PasswordField fx:id="reg_retypepassword" layoutX="52.0" layoutY="184.0" prefHeight="38.0" prefWidth="242.0" promptText="Retype your password" styleClass="textfild" stylesheets="@application.css">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </PasswordField>
+                  <ComboBox fx:id="reg_question" layoutX="54.0" layoutY="236.0" prefHeight="38.0" prefWidth="242.0" promptText="Question" />
+                  <TextField fx:id="reg_answer" layoutX="53.0" layoutY="287.0" prefHeight="40.0" prefWidth="242.0" promptText="Answer" styleClass="textfild" stylesheets="@application.css">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="btnFromRegister" layoutX="152.0" layoutY="401.0" mnemonicParsing="false" onAction="#backToLogin" prefHeight="26.0" prefWidth="28.0" styleClass="hide-show-btn" stylesheets="@application.css">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/previous.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="showBtn" layoutX="296.0" layoutY="135.0" mnemonicParsing="false" onAction="#showHidePassword" prefHeight="26.0" prefWidth="28.0" styleClass="hide-show-btn" stylesheets="@application.css">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/visible.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <TextField fx:id="reg_showpassword" layoutX="52.0" layoutY="134.0" prefHeight="40.0" prefWidth="242.0" styleClass="textfild" stylesheets="@application.css" visible="false">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="reg_showretypepassword" layoutX="53.0" layoutY="183.0" prefHeight="40.0" prefWidth="242.0" promptText="Retype your password" styleClass="textfild" stylesheets="@application.css" visible="false">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="hideBtn" layoutX="296.0" layoutY="135.0" mnemonicParsing="false" onAction="#showHidePassword" prefHeight="26.0" prefWidth="28.0" styleClass="hide-show-btn" stylesheets="@application.css" visible="false">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/invisible.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="forgot_pass_form" prefHeight="200.0" prefWidth="200.0" styleClass="form" stylesheets="@application.css" visible="false">
+               <children>
+                  <AnchorPane layoutX="-1.0" layoutY="1.0" prefHeight="64.0" prefWidth="350.0" style="-fx-background-color: #FDFDFD; -fx-background-radius: 20px 20px 0 0;" styleClass="-fx-background-color: white" AnchorPane.bottomAnchor="381.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0">
+                     <children>
+                        <Label alignment="CENTER" layoutY="2.0" prefHeight="64.0" prefWidth="350.0" styleClass="login-title" stylesheets="@application.css" text="Forgot Password" />
+                     </children>
+                  </AnchorPane>
+                  <TextField fx:id="for_username" layoutX="53.0" layoutY="90.0" prefHeight="40.0" prefWidth="242.0" promptText="username" styleClass="textfild" stylesheets="@application.css">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <Button layoutX="53.0" layoutY="257.0" mnemonicParsing="false" onAction="#proceedButton" prefHeight="51.0" prefWidth="242.0" styleClass="form-btn" stylesheets="@application.css" text="Proceed">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <ComboBox fx:id="for_question" layoutX="54.0" layoutY="145.0" prefHeight="38.0" prefWidth="242.0" promptText="Question" />
+                  <Button fx:id="btnFromForgot" layoutX="152.0" layoutY="371.0" mnemonicParsing="false" onAction="#backToLogin" prefHeight="26.0" prefWidth="28.0" styleClass="hide-show-btn" stylesheets="@application.css">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/previous.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <TextField fx:id="for_answer" layoutX="53.0" layoutY="199.0" prefHeight="40.0" prefWidth="242.0" promptText="answer" styleClass="textfild" stylesheets="@application.css">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="reset_pass_form" prefHeight="200.0" prefWidth="200.0" styleClass="form" stylesheets="@application.css" visible="false">
+               <children>
+                  <AnchorPane layoutX="-1.0" layoutY="1.0" prefHeight="64.0" prefWidth="350.0" style="-fx-background-color: #FDFDFD; -fx-background-radius: 20px 20px 0 0;" styleClass="-fx-background-color: white" AnchorPane.bottomAnchor="381.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0">
+                     <children>
+                        <Label alignment="CENTER" layoutY="2.0" prefHeight="64.0" prefWidth="350.0" styleClass="login-title" stylesheets="@application.css" text="Reset Password" />
+                     </children>
+                  </AnchorPane>
+                  <PasswordField fx:id="res_password" layoutX="54.0" layoutY="91.0" prefHeight="38.0" prefWidth="242.0" promptText="New password" styleClass="textfild" stylesheets="@application.css">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </PasswordField>
+                  <TextField fx:id="res_showpassword" layoutX="53.0" layoutY="90.0" prefHeight="40.0" prefWidth="242.0" promptText="New password" styleClass="textfild" stylesheets="@application.css" visible="false">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <Button layoutX="53.0" layoutY="210.0" mnemonicParsing="false" onAction="#changePassword" prefHeight="51.0" prefWidth="242.0" styleClass="form-btn" stylesheets="@application.css" text="Change Password">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <PasswordField fx:id="res_retypepassword" layoutX="53.0" layoutY="145.0" prefHeight="38.0" prefWidth="242.0" promptText="Retype password" styleClass="textfild" stylesheets="@application.css">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </PasswordField>
+                  <TextField fx:id="res_showretypepassword" layoutX="54.0" layoutY="144.0" prefHeight="40.0" prefWidth="242.0" promptText="Retype password" styleClass="textfild" stylesheets="@application.css" visible="false">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <Button layoutX="152.0" layoutY="371.0" mnemonicParsing="false" onAction="#backToForgotPass" prefHeight="26.0" prefWidth="28.0" styleClass="hide-show-btn" stylesheets="@application.css">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/previous.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="res_showBtn" layoutX="296.0" layoutY="90.0" mnemonicParsing="false" onAction="#showHidePassword" prefHeight="26.0" prefWidth="28.0" styleClass="hide-show-btn" stylesheets="@application.css">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/visible.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="res_hideBtn" layoutX="296.0" layoutY="90.0" mnemonicParsing="false" onAction="#showHidePassword" prefHeight="26.0" prefWidth="28.0" styleClass="hide-show-btn" stylesheets="@application.css" visible="false">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/invisible.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </children></StackPane>
+   </children>
+</AnchorPane>

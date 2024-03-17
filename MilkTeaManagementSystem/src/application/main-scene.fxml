@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="main_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="715.0" prefWidth="1205.0" styleClass="main" stylesheets="@application.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainAppController">
+   <children>
+      <AnchorPane layoutY="-14.0" prefHeight="715.0" prefWidth="250.0" styleClass="sidebar" stylesheets="@application.css" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="-14.0">
+         <children>
+            <Label alignment="CENTER" layoutX="36.0" layoutY="262.0" prefHeight="31.0" prefWidth="104.0" text="Welcome" textFill="WHITE">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="50.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/bubble-tea.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutY="183.0" prefHeight="68.0" prefWidth="250.0" styleClass="main-brand" stylesheets="@application.css" text="Milk Tea Shop&#10;Management System" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Arial Black" size="21.0" />
+               </font>
+            </Label>
+            <VBox alignment="CENTER" layoutX="-1.0" layoutY="302.0" prefHeight="414.0" prefWidth="250.0" spacing="40.0" AnchorPane.topAnchor="302.0">
+               <children>
+                  <Button fx:id="tab_dashboard" mnemonicParsing="false" onAction="#switchTab" prefHeight="51.0" prefWidth="194.0" styleClass="main-tab" stylesheets="@application.css" text="Dashboard">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/dashboard.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Arial" size="21.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="tab_product" mnemonicParsing="false" onAction="#switchTab" prefHeight="51.0" prefWidth="194.0" styleClass="main-tab" stylesheets="@application.css" text="Products">
+                     <graphic>
+                        <ImageView fitHeight="43.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/bubble-tea-tab.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="tab_selling" mnemonicParsing="false" onAction="#switchTab" prefHeight="51.0" prefWidth="194.0" styleClass="main-tab" stylesheets="@application.css" text="Selling">
+                     <graphic>
+                        <ImageView fitHeight="39.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/selling.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="tab_statictics" mnemonicParsing="false" onAction="#switchTab" prefHeight="51.0" prefWidth="194.0" styleClass="main-tab" stylesheets="@application.css" text="Staticstics">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/stats.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </VBox>
+            <Label fx:id="username" layoutX="139.0" layoutY="262.0" prefHeight="31.0" prefWidth="104.0" text="Admin" textFill="WHITE">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="278.0" layoutY="20.0" prefHeight="130.0" prefWidth="902.0" styleClass="topbar" stylesheets="@application.css" AnchorPane.leftAnchor="278.0" AnchorPane.rightAnchor="25.0">
+         <children>
+            <Label fx:id="main_title" layoutX="17.0" layoutY="30.0" prefHeight="68.0" prefWidth="285.0" stylesheets="@application.css" text="Dashboard" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Arial Black" size="25.0" />
+               </font>
+            </Label>
+            <ImageView accessibleRole="BUTTON" fitHeight="57.0" fitWidth="61.0" layoutX="804.0" layoutY="33.0" onMouseClicked="#showExit" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/user.png" />
+               </image>
+            </ImageView>
+            <HBox fx:id="search_bar" alignment="CENTER" layoutX="469.0" layoutY="37.0" prefHeight="54.0" prefWidth="312.0" spacing="10.0">
+               <children>
+                  <TextField fx:id="search_input" prefHeight="31.0" prefWidth="235.0" promptText="Search" />
+                  <Button fx:id="search_btn" mnemonicParsing="false" onAction="#searchButton" prefHeight="31.0" prefWidth="62.0" styleClass="product-update-btn" stylesheets="@application.css" text="Search" />
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <StackPane layoutX="279.0" layoutY="174.0" prefHeight="512.0" prefWidth="902.0" styleClass="topbar" stylesheets="@application.css" AnchorPane.bottomAnchor="29.0" AnchorPane.leftAnchor="279.0" AnchorPane.rightAnchor="23.600000000000023" AnchorPane.topAnchor="174.0">
+         <children>
+            <AnchorPane fx:id="main_daskboard" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <AnchorPane layoutX="71.0" layoutY="52.0" prefHeight="174.0" prefWidth="286.0" styleClass="daskboard-card" stylesheets="@application.css" AnchorPane.leftAnchor="71.0" AnchorPane.topAnchor="52.0">
+                     <children>
+                        <ImageView fitHeight="150.0" fitWidth="120.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/milk-tea.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="181.0" layoutY="34.0" text="Quantity" textFill="WHITE">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <HBox alignment="CENTER" layoutX="177.0" layoutY="105.0" prefHeight="35.0" prefWidth="96.0" style="-fx-background-color: #B7C8FF; -fx-background-radius: 20;">
+                           <children>
+                              <Label fx:id="dash_quantity" text="23">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children></AnchorPane>
+                  <AnchorPane layoutX="572.0" layoutY="293.0" prefHeight="174.0" prefWidth="286.0" styleClass="daskboard-card" stylesheets="@application.css" AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="50.0">
+                     <children>
+                        <ImageView fitHeight="150.0" fitWidth="120.0" layoutX="6.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/piggy-bank.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="126.0" layoutY="25.0" text="Daily Revenue" textFill="WHITE">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <HBox alignment="CENTER" layoutX="180.0" layoutY="98.0" prefHeight="35.0" prefWidth="96.0" style="-fx-background-color: #B7C8FF; -fx-background-radius: 20;">
+                           <children>
+                              <Label fx:id="dash_daily_revenue" text="\$5.6">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children></AnchorPane>
+                  <AnchorPane layoutX="565.0" layoutY="52.0" prefHeight="174.0" prefWidth="286.0" styleClass="daskboard-card" stylesheets="@application.css" AnchorPane.rightAnchor="50.0">
+                     <children>
+                        <ImageView fitHeight="150.0" fitWidth="120.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/maximum.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="202.0" layoutY="36.0" text="Sold" textFill="WHITE">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <HBox alignment="CENTER" layoutX="178.0" layoutY="96.0" prefHeight="35.0" prefWidth="96.0" style="-fx-background-color: #B7C8FF; -fx-background-radius: 20;">
+                           <children>
+                              <Label fx:id="dash_sold" text="4">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children></AnchorPane>
+                  <AnchorPane layoutX="71.0" layoutY="294.0" prefHeight="174.0" prefWidth="286.0" styleClass="daskboard-card" stylesheets="@application.css" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="71.0">
+                     <children>
+                        <ImageView fitHeight="150.0" fitWidth="120.0" layoutX="10.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/dollar.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="182.0" layoutY="34.0" text="Revenue" textFill="WHITE">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <HBox alignment="CENTER" layoutX="180.0" layoutY="99.0" prefHeight="35.0" prefWidth="96.0" style="-fx-background-color: #B7C8FF; -fx-background-radius: 20;">
+                           <children>
+                              <Label fx:id="dash_revenue" text="\$34.5">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children></AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="main_product" prefHeight="200.0" prefWidth="200.0" visible="false">
+               <children>
+                  <TableView fx:id="product_table" layoutX="14.0" layoutY="182.0" prefHeight="298.0" prefWidth="587.0" stylesheets="@application.css" AnchorPane.bottomAnchor="32.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="301.0" AnchorPane.topAnchor="21.0">
+                    <columns>
+                      <TableColumn fx:id="product_name" prefWidth="213.60003662109375" text="Product Name" />
+                      <TableColumn fx:id="product_quantity" prefWidth="80.79995727539062" text="Quantity" />
+                        <TableColumn fx:id="product_size" prefWidth="90.4000244140625" text="Size" />
+                        <TableColumn fx:id="product_price" prefWidth="91.20001220703125" text="Price" />
+                        <TableColumn fx:id="product_status" prefWidth="108.79998779296875" text="Status" />
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+                  <AnchorPane layoutX="620.0" layoutY="21.0" prefHeight="459.0" prefWidth="266.0" styleClass="product-adding" stylesheets="@application.css" AnchorPane.bottomAnchor="32.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="21.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="5.0" styleClass="product-adding-title" stylesheets="@application.css" text="Product Name: " />
+                        <TextField fx:id="product_name_field" layoutX="14.0" layoutY="28.0" prefHeight="31.0" prefWidth="235.0" />
+                        <Label layoutX="20.0" layoutY="63.0" styleClass="product-adding-title" stylesheets="@application.css" text="Quantity: " />
+                        <TextField fx:id="product_quantity_field" layoutX="16.0" layoutY="88.0" prefHeight="31.0" prefWidth="235.0" />
+                        <Label layoutX="20.0" layoutY="191.0" styleClass="product-adding-title" stylesheets="@application.css" text="Size: " />
+                        <Label layoutX="18.0" layoutY="125.0" styleClass="product-adding-title" stylesheets="@application.css" text="Price" />
+                        <TextField fx:id="product_price_field" layoutX="15.0" layoutY="145.0" prefHeight="31.0" prefWidth="235.0" />
+                        <ChoiceBox fx:id="product_size_field" layoutX="18.0" layoutY="217.0" prefHeight="26.0" prefWidth="170.0" />
+                        <Label layoutX="20.0" layoutY="253.0" styleClass="product-adding-title" stylesheets="@application.css" text="Status" />
+                        <ChoiceBox fx:id="product_status_field" layoutX="18.0" layoutY="282.0" prefHeight="26.0" prefWidth="170.0" />
+                        <Button fx:id="product_import_btn" layoutX="195.0" layoutY="416.0" mnemonicParsing="false" onAction="#importImageBtn" text="Import" AnchorPane.bottomAnchor="17.8" />
+                        <Button layoutX="23.0" layoutY="328.0" mnemonicParsing="false" onAction="#addProduct" prefHeight="31.0" prefWidth="62.0" styleClass="product-update-btn" stylesheets="@application.css" text="Add" />
+                        <ImageView fx:id="product_image" fitHeight="68.0" fitWidth="71.0" layoutX="186.0" layoutY="328.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="63.0" />
+                        <Button layoutX="104.0" layoutY="328.0" mnemonicParsing="false" onAction="#updateProduct" prefHeight="31.0" prefWidth="62.0" styleClass="product-update-btn" stylesheets="@application.css" text="Update" />
+                        <Button layoutX="104.0" layoutY="410.0" mnemonicParsing="false" onAction="#clearAddingInput" prefHeight="31.0" prefWidth="62.0" styleClass="product-update-btn" stylesheets="@application.css" text="Clear" AnchorPane.bottomAnchor="17.8" />
+                        <Button layoutX="23.0" layoutY="408.0" mnemonicParsing="false" onAction="#deleteProduct" prefHeight="31.0" prefWidth="62.0" styleClass="product-update-btn" stylesheets="@application.css" text="Delete" AnchorPane.bottomAnchor="17.8" />
+                     </children></AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="main_selling" prefHeight="200.0" prefWidth="200.0" visible="false">
+               <children>
+                  <ScrollPane fx:id="selling_scroll" layoutX="15.0" layoutY="15.0" prefHeight="482.0" prefWidth="587.0" stylesheets="@application.css" AnchorPane.bottomAnchor="14.600000000000023" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="300.19999999999993" AnchorPane.topAnchor="15.0" />
+                  <AnchorPane layoutX="617.0" layoutY="15.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="482.0" prefWidth="273.0" styleClass="product-adding" stylesheets="@application.css" AnchorPane.bottomAnchor="14.600000000000023" AnchorPane.rightAnchor="11.799999999999955" AnchorPane.topAnchor="15.0">
+                     <children>
+                        <ListView fx:id="selling_product" layoutX="15.0" layoutY="10.0" prefHeight="227.0" prefWidth="242.0" />
+                        <Label layoutX="120.0" layoutY="286.0" styleClass="product-adding-title" stylesheets="@application.css" text="Total:" />
+                        <TextField fx:id="selling_total" editable="false" layoutX="170.0" layoutY="283.0" prefHeight="26.0" prefWidth="87.0" text="\$" />
+                        <Label layoutX="104.0" layoutY="253.0" styleClass="product-adding-title" stylesheets="@application.css" text="Amount:" />
+                        <TextField fx:id="selling_amount" editable="false" layoutX="171.0" layoutY="250.0" prefHeight="26.0" prefWidth="87.0" />
+                        <Button fx:id="selling_pay_btn" layoutX="25.0" layoutY="372.0" mnemonicParsing="false" onAction="#payButton" prefHeight="42.0" prefWidth="223.0" styleClass="product-update-btn" stylesheets="@application.css" text="Pay">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="selling_remove_btn" layoutX="27.0" layoutY="430.0" mnemonicParsing="false" onMouseClicked="#removeButton" prefHeight="42.0" prefWidth="104.0" stylesheets="@application.css" text="Remove">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                           <styleClass>
+                              <String fx:value="product-update-btn" />
+                              <String fx:value="product-delete-btn" />
+                           </styleClass>
+                        </Button>
+                        <Button fx:id="selling_receipt_btn" layoutX="144.0" layoutY="430.0" mnemonicParsing="false" onAction="#recepit" prefHeight="42.0" prefWidth="104.0" styleClass="product-update-btn" stylesheets="@application.css" text="Receipt">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Button>
+                        <TextField fx:id="selling_phone" layoutX="169.0" layoutY="317.0" prefHeight="31.0" prefWidth="87.0" promptText="Enter Phone" />
+                        <Label layoutX="109.0" layoutY="323.0" styleClass="product-adding-title" stylesheets="@application.css" text="Phone:" />
+                     </children></AnchorPane>
+               </children></AnchorPane>
+            <AnchorPane fx:id="main_statictics" prefHeight="200.0" prefWidth="200.0" visible="false">
+               <children>
+                  <ScrollPane layoutX="7.0" layoutY="8.0" prefHeight="498.0" prefWidth="886.0" styleClass="sroll-pane" stylesheets="@application.css">
+                     <content>
+                        <VBox fx:id="stat_container" alignment="TOP_CENTER" maxHeight="-Infinity" prefHeight="1300.0" prefWidth="871.0" spacing="20.0">
+                           <children>
+                              <TableView fx:id="stat_customer_table" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="362.0" prefWidth="852.0">
+                                <columns>
+                                  <TableColumn fx:id="stat_customer_id" prefWidth="132.80001521110535" text="Customer Id" />
+                                  <TableColumn fx:id="stat_customer_phone" prefWidth="221.6000213623047" text="Phone" />
+                                    <TableColumn fx:id="stat_customer_times" prefWidth="145.5999755859375" text="Purchase Times" />
+                                    <TableColumn fx:id="stat_customer_date" prefWidth="367.2000732421875" text="Recently Date" />
+                                </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                           </children>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+               </children></AnchorPane>
+         </children></StackPane>
+      <AnchorPane fx:id="user_exitpane" layoutX="996.0" layoutY="121.0" prefHeight="51.0" prefWidth="138.0" styleClass="main-user" stylesheets="@application.css" visible="false">
+         <children>
+            <Button fx:id="user_logout_btn" layoutX="26.0" layoutY="10.0" mnemonicParsing="false" onAction="#logout" prefHeight="31.0" prefWidth="87.0" styleClass="main-btn-logout" stylesheets="@application.css" text="Log out" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
